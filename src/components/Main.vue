@@ -1,6 +1,8 @@
 <template>
   <main>
-
+    <div class="container">
+      <span>MAIN</span>
+    </div>
   </main>
 </template>
 
@@ -13,8 +15,12 @@ export default {
 <style lang="scss">
  
  main{
-   background-color: #1C1C1C;
-   height: 150px;
-   width: 100%;
+  background-color: #1C1C1C;
+  height: 150px;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+
  }
 </style>

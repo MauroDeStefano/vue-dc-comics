@@ -84,11 +84,12 @@ export default {
       
       a{
         float: left;
-        margin-left: 10px;
+        margin-left: 20px;
         text-decoration: none;
         color: black;
         line-height: 145px;
         border-bottom: 5px solid white;
+        
       }
       .active{
         color: #0C7CEC;
