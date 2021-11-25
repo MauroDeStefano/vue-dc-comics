@@ -30,6 +30,7 @@ export default {
 
   .card{
     display: inline-block;
+    padding-bottom: 20px;
   }
   img{
     width: 150px;
