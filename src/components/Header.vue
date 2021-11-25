@@ -4,7 +4,9 @@
       <img src="../assets/img/dc-logo.png" alt="">
     </div>
       <nav>
-        <a v-for="(item, index) in navBtn" :key="index" @click="item.active = !item.active" :class="{active: item.active}" >{{item.name}}</a>
+        <a v-for="(item, index) in navBtn" 
+        :key="index" @click="item.active = !item.active, controller = index" 
+        :class="{active: item.active && index === controller}" >{{item.name}}</a>
       </nav>
   </header>
 </template>
@@ -65,7 +67,9 @@ export default {
           active: false,
           url: "prova"
         }
-      ]
+      ],
+
+      controller: "",
     }
   }
 }
@@ -89,6 +93,9 @@ export default {
         color: black;
         line-height: 145px;
         border-bottom: 5px solid white;
+        &:hover{
+        cursor: pointer;
+      }
         
       }
       .active{

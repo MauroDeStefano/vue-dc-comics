@@ -2,7 +2,7 @@
   <section class="merchandising">
     <div class="container">
       <div class="merch-list" v-for="(merch, index) in merchType" :key="index">
-        <img :src="'../assets7img7buy-comics-' + merch.image" alt=""><span>{{merch.name}}</span>
+        <img :src="merch.image" alt=""><span>{{merch.name}}</span>
       </div>
     </div>
   </section>
@@ -18,27 +18,27 @@ export default {
       merchType:[
         {
           name: "DIGITAL COMICS",
-          image: "digital-comics.png",
+          image: require("../assets/img/buy-comics-digital-comics.png"),
           url: "adsadssda"
         },
         {
           name: "DC MERCHANDISE",
-          image: "merchandise.png",
+          image: require("../assets/img/buy-comics-merchandise.png"),
           url: "adsadssda"
         },
         {
           name: "SUBSCRIPTION",
-          image: "shop-locator.png",
+          image: require("../assets/img/buy-comics-subscriptions.png"),
           url: "adsadssda"
         },
         {
           name: "COMIC SHOP LOCATOR",
-          image: "subscriptions.png",
+          image: require("../assets/img/buy-comics-shop-locator.png"),
           url: "adsadssda"
         },
         {
           name: "DC POWER VISA",
-          image: "subscriptions.png",
+          image: require("../assets/img/buy-dc-power-visa.svg"),
           url: "adsadssda"
         },
       ]
@@ -62,6 +62,14 @@ export default {
       justify-content: space-between;
       align-items: center;
       color: white;
+      &:hover{
+        cursor: pointer;
+      }
+
+      img{
+        width: 40px;
+        margin-right: 10px;
+      }
     }
   }
   

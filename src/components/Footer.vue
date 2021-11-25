@@ -2,7 +2,7 @@
   <footer>
     <div class="footer-top">
       <div class="container">
-        <div class="link-list">
+        <div class="link-list ">
           <div v-for="(list, index) in listLinks" :key="`list${index}`">
             <h2>{{list.name}}</h2>
             <ul>
@@ -16,14 +16,16 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom clearfix">
       <div class="container">
         <div class="sign">
-          <button>SIGN-UP NOW!</button>
+          <a>SIGN-UP NOW!</a>
         </div>
         <div class="social">
           <div> FOLLOW US </div>
-          <div></div>
+          <div class="icon" v-for="(icon, ii) in socialIcons" :key="`socialIcons${ii}`">
+            <img :src="icon.name" alt="">
+          </div>
         </div>
       </div>  
     </div>
@@ -156,6 +158,28 @@ export default {
             }
           ]
         }
+      ],
+      socialIcons:[
+        {
+          name: require("../assets/img/footer-facebook.png"),
+          url: "example.com"
+        },
+        {
+          name:  require("../assets/img/footer-twitter.png"),
+          url: "example.com"
+        },
+        {
+          name:  require("../assets/img/footer-youtube.png"),
+          url: "example.com"
+        },
+        {
+          name:  require("../assets/img/footer-pinterest.png"),
+          url: "example.com"
+        },
+        {
+          name:  require("../assets/img/footer-periscope.png"),
+          url: "example.com"
+        }
       ]
     }
   }
@@ -187,6 +211,9 @@ export default {
       li{
         list-style: none;
         color: gray;
+        &:hover{
+        cursor: pointer;
+      }
       }
     }
   }
@@ -215,9 +242,34 @@ export default {
 
     .sign{
       color: white;
+      border: 2px solid #008CFF;
+      text-decoration: none;
+      padding: 5px 15px;
+      line-height: 40px;
+
+      &:hover{
+        cursor: pointer;
+      }
     }
-    .social{  
+    .social{
+      display: flex;
       color: #0087FF;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-weight: 700;
+      font-size: 20px;
+      
+      
+
+      img{
+        vertical-align: middle;
+        width: 40px;
+        margin: 5px;
+        &:hover{
+          cursor: pointer;
+        }
+      }
     }
   } 
 }
